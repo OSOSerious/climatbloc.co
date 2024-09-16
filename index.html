@@ -1,5 +1,465 @@
 <!DOCTYPE html>
+<html lang="en"><!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClimatBloc: Revolutionizing Sustainable Construction</title>
+<style>
+:root {
+  --bg-color: #1A2B4E;
+  --text-color: #FFFFFF;
+  --accent-color: #2C8ED8;
+  --secondary-color: #4A4DBC;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(26, 43, 78, 0.9);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.hero {
+  background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.feature-grid, .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item, .product-item {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3, .product-item h3 {
+  margin-top: 0;
+}
+
+footer {
+  background-color: rgba(26, 43, 78, 0.9);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Slideshow styles */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-content {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(76, 77, 188, 0.8);
+}
+
+.dot-container {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--secondary-color);
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo">ClimatBloc</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Revolutionizing Sustainable Construction</h1>
+    <p>Patented technology for a greener, more resilient future</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>About ClimatBloc</h2>
+    <div class="slideshow-container">
+
+      <!-- Slide 1 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 1: Introduction to ClimatBloc™</h3>
+          <ul>
+            <li>ClimatBloc™: Patented, interlocking self-tensioning design.</li>
+            <li>Introduction to ClimatBloc™ technology and energy storage integration.</li>
+            <li>Enhanced structural efficiency with eco-friendly materials.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 2: ClimatBloc™ Technology and Energy Storage Integration</h3>
+          <ul>
+            <li>Advanced Energy Storage Systems: Seamlessly integrates within building materials.</li>
+            <li>Sustainability: Harness renewable energy, improving efficiency.</li>
+            <li>Strength & Durability: Optimized for modern, sustainable architectural designs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 3: Enhanced Structural Efficiency and Performance Metrics</h3>
+          <ul>
+            <li>Sustainable Construction Practices: ClimatBloc™ lowers carbon footprint.</li>
+            <li>Patented Design: Ensures ease of assembly and structural integrity.</li>
+            <li>Energy Performance: Exceptional strength and durability combined with energy efficiency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Continue adding slides up to Slide 12 in the same format -->
+      
+      <!-- Slide 4 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 4: Fire Resistance Capabilities and Safety Advantages</h3>
+          <ul>
+            <li>Eco-Friendly Alternatives: Hemp lime composite and carbon black-infused concrete.</li>
+            <li>Safety: Fire-resistant materials that reduce CO2 emissions.</li>
+            <li>Collaboration: Partnerships with MIT and ExxonMobil to enhance credibility.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 5: Overview of Patents</h3>
+          <ul>
+            <li>Protection of Innovations: International patents for materials like hemp lime composite.</li>
+            <li>Encouraging Research: The patent system fosters advancements in sustainable materials.</li>
+            <li>Market Credibility: Patents attract partnerships and investments from renowned institutions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slides 6 to 12 -->
+      <!-- Repeat the structure for each slide -->
+
+      <!-- Slide 6 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 6: Sustainable Building Material</h3>
+          <ul>
+            <li>Proof of Concept: Residential structures on Vancouver Island.</li>
+            <li>Hemp Lime Composite: Excellent thermal insulation and carbon sequestration.</li>
+            <li>Lower CO2 Emissions: Aligns with global sustainability goals.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 7: ClimatBloc™ Patented Self-Tensioning Frame</h3>
+          <ul>
+            <li>Composite Materials: Lightweight, durable, and sustainable.</li>
+            <li>Carbon-Black Infusion Technology: Integration of patented carbon-black infusion enhances structural integrity and provides energy storage capabilities.</li>
+            <li>Sustainable Sourcing: Eco-friendly practices aligning with global sustainability objectives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 8: Enhanced Energy Storage and Structural Integrity</h3>
+          <ul>
+            <li>Energy Storage Capacity: Carbon black improves energy storage.</li>
+            <li>Strength & Durability: Enhances resilience to environmental stresses.</li>
+            <li>Cost Efficiency: Reduces reliance on traditional energy sources.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 9 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 9: Enhanced Energy Storage Capacitor Functionality</h3>
+          <ul>
+            <li>Synergy with Solar Panels: Optimizes energy capture and storage.</li>
+            <li>Energy Management: Acts as a capacitor to improve efficiency and reduce energy costs.</li>
+            <li>CO2 Reduction: Supports renewable energy initiatives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 10 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 10: Diverse Applications of ClimatBloc™</h3>
+          <ul>
+            <li>Residential Use: Energy-efficient solutions reduce utility costs.</li>
+            <li>Commercial Use: Energy independence for businesses, improving CSR and brand image.</li>
+            <li>Infrastructure Projects: Long-lasting structures with energy storage capabilities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 11 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 11: Market Trends in Sustainable Construction</h3>
+          <ul>
+            <li>Sustainable Construction: Increasing demand for eco-friendly technology.</li>
+            <li>Energy Efficiency: ClimatBloc™ supports renewable energy storage and use.</li>
+            <li>Green Investments: Expanding opportunities in the growing green tech market.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 12 -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3>Slide 12: Empower Sustainable Practices</h3>
+          <ul>
+            <li>Contribute to a Greener Future: Adopting ClimatBloc™ reduces carbon footprints.</li>
+            <li>Dual Purpose: Building material and energy storage system.</li>
+            <li>Join the Community: Engage with others committed to sustainable construction.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <!-- Dots/bullets -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
+      <span class="dot" onclick="currentSlide(12)"></span>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <h2>Innovative Solutions</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>Patented Self-Tensioning Frame</h3>
+        <p>Revolutionary efficiency and simplified assembly, reducing labor requirements and construction time.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Unmatched Performance</h3>
+        <p>R-40 insulation, 3-hour fire resistance, and 170 mph wind resistance for superior building protection.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Eco-Friendly Materials</h3>
+        <p>Hemp lime composite and carbon black infused concrete for reduced CO2 impact and enhanced sustainability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <h3>Hemp Lime Composite System</h3>
+        <p>Our flagship product combining hemp lime composite with our patented BMC frame for optimal insulation and sustainability.</p>
+      </div>
+      <div class="product-item">
+        <h3>Carbon Black Infused Concrete System</h3>
+        <p>Developed in collaboration with MIT, this system offers enhanced structural integrity and potential energy storage capabilities.</p>
+      </div>
+      <div class="product-item">
+        <h3>ClimatBloc Design Services</h3>
+        <p>Custom design and consultation services to integrate our innovative systems into your construction projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Ready to revolutionize your construction project? Get in touch with our team of experts.</p>
+    <a href="mailto:info@climatbloc.com" class="btn">Contact Us</a>
+  </div>
+</footer>
+
+<!-- JavaScript for slideshow -->
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail/dot controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName('slide');
+  const dots = document.getElementsByClassName('dot');
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex-1].style.display = 'block';  
+  dots[slideIndex-1].className += ' active';
+}
+
+// Automatic slideshow (optional)
+// setInterval(function() {
+//   plusSlides(1);
+// }, 5000); // Change slide every 5 seconds
+</script>
+
+</body>
+</html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
