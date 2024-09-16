@@ -15,7 +15,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; /* Ensured sans-serif font */
+  font-family: 'Arial', sans-serif; /* Sans-serif font */
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -32,7 +32,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(46, 139, 87, 0.9); /* Adjusted for green background */
+  background-color: rgba(46, 139, 87, 0.9);
 }
 
 nav {
@@ -106,7 +106,7 @@ section {
 }
 
 footer {
-  background-color: rgba(46, 139, 87, 0.9); /* Adjusted for green background */
+  background-color: rgba(46, 139, 87, 0.9);
   text-align: center;
   padding: 1rem 0;
 }
@@ -149,7 +149,7 @@ footer {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(60, 179, 113, 0.8); /* MediumSeaGreen */
+  background-color: rgba(60, 179, 113, 0.8);
 }
 
 .dot-container {
@@ -198,7 +198,7 @@ footer {
   <div class="container">
     <h2>About ClimatBloc</h2>
     <div class="slideshow-container">
-
+      <!-- Add your slides here -->
       <!-- Slide 1 -->
       <div class="slide">
         <div class="slide-content">
@@ -210,20 +210,16 @@ footer {
           </ul>
         </div>
       </div>
-
-      <!-- Continue adding slides (Slides 2 to 12) in the same format -->
-
+      <!-- Continue adding slides (Slides 2 to 12) -->
       <!-- Navigation buttons -->
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
     </div>
-
     <!-- Dots/bullets -->
     <div class="dot-container">
-      <!-- Add dots for each slide -->
+      <!-- Add dots corresponding to the number of slides -->
       <span class="dot" onclick="currentSlide(1)"></span>
-      <!-- Continue for the number of slides you have -->
+      <!-- Continue for each slide -->
     </div>
   </div>
 </section>
@@ -242,9 +238,23 @@ footer {
       </div>
       <div class="feature-item">
         <h3>Eco-Friendly Materials</h3>
-        <p>Hemp lime composite and carbon black infused concrete for reduced CO2 impact and enhanced sustainability.</p>
+        <p>Hemp lime composite and carbon black infused concrete for reduced CO<sub>2</sub> impact and enhanced sustainability.</p>
+      </div>
+      <!-- Enhanced Feature Item -->
+      <div class="feature-item">
+        <h3>Carbon–Black Infusion Technology</h3>
+        <p>The integration of Pedram Nimreezi and Mac Radford's patented carbon–black not only bolsters the structural integrity of ClimatBloc™ but also provides them with energy storage capabilities, facilitating efficient energy management within buildings.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- New Dedicated Section -->
+<section id="carbon-black">
+  <div class="container">
+    <h2>Carbon–Black Infusion Technology</h2>
+    <p>The integration of Pedram Nimreezi and Mac Radford's patented carbon–black not only bolsters the structural integrity of ClimatBloc™ but also provides them with energy storage capabilities, facilitating efficient energy management within buildings.</p>
+    <p>This groundbreaking technology allows buildings to store and manage energy more efficiently, reducing reliance on external energy sources and promoting sustainability. By infusing carbon–black into our building materials, we create structures that are not only stronger but also smarter.</p>
   </div>
 </section>
 
@@ -256,9 +266,11 @@ footer {
         <h3>Hemp Lime Composite System</h3>
         <p>Our flagship product combining hemp lime composite with our patented BMC frame for optimal insulation and sustainability.</p>
       </div>
+      <!-- Enhanced Product Item -->
       <div class="product-item">
-        <h3>Carbon Black Infused Concrete System</h3>
+        <h3>Carbon–Black Infused Concrete System</h3>
         <p>Developed in collaboration with MIT, this system offers enhanced structural integrity and potential energy storage capabilities.</p>
+        <p>The integration of Pedram Nimreezi and Mac Radford's patented carbon–black not only bolsters the structural integrity of ClimatBloc™ but also provides energy storage capabilities, facilitating efficient energy management within buildings.</p>
       </div>
       <div class="product-item">
         <h3>ClimatBloc Design Services</h3>
