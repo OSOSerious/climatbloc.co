@@ -1,427 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ClimatBloc™ - Revolutionizing Sustainable Construction</title>
-    <!-- CSS Styles -->
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #333;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        /* Header and Navigation */
-        header {
-            background-color: #2e7d32;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-        }
-        
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-        }
-        
-        nav ul {
-            display: flex;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            font-weight: 500;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
-        #hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
-            height: 100vh;
-            color: #fff;
-            text-align: center;
-            padding-top: 40vh;
-        }
-        
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        #hero p {
-            font-size: 1.5rem;
-        }
-        
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-            margin-top: 80px;
-        }
-        
-        section h2 {
-            color: #2e7d32;
-            margin-bottom: 1rem;
-        }
-        
-        .material-options h3,
-        .applications-grid h4 {
-            color: #1b5e20;
-            margin-top: 2rem;
-        }
-        
-        .applications-grid {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .applications-grid .application {
-            flex: 1;
-            min-width: 250px;
-            margin: 1rem;
-        }
-        
-        .applications-grid .application ul {
-            margin-top: 0.5rem;
-        }
-        
-        /* Contact Section */
-        #contact {
-            background-color: #e8f5e9;
-            text-align: center;
-        }
-        
-        #contact p {
-            font-size: 1.2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #1b5e20;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            nav .menu-toggle {
-                display: block;
-                color: #fff;
-                font-size: 1.5rem;
-            }
-            #hero {
-                padding-top: 30vh;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClimatBloc: Revolutionizing Sustainable Construction</title>
+  <style>
+    :root {
+      --bg-color: #1A2B4E; /* Dark Blue */
+      --text-color: #FFFFFF;
+      --accent-color: #2C8ED8; /* Light Blue */
+      --secondary-color: #4A4DBC; /* Medium Blue */
+      --highlight-color: #FFD700; /* Gold for emphasis */
+      --button-hover-color: #1E90FF; /* Dodger Blue */
+      --section-padding: 4rem 0;
+      --font-large: 1.5rem;
+      --font-medium: 1.2rem;
+      --font-small: 1rem;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(26, 43, 78, 0.95);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      background: url('hero-image.jpg') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 43, 78, 0.7);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--highlight-color);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover-color);
+    }
+
+    section {
+      padding: var(--section-padding);
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: var(--highlight-color);
+    }
+
+    .feature-grid, .product-grid, .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item, .product-item, .testimonial-item {
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-item:hover, .product-item:hover, .testimonial-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-item h3, .product-item h3, .testimonial-item h3 {
+      margin-top: 0;
+      color: var(--highlight-color);
+      font-size: 1.5rem;
+    }
+
+    .testimonial-item p {
+      font-style: italic;
+      font-size: var(--font-medium);
+    }
+
+    /* Slideshow Styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      margin-top: 2rem;
+    }
+
+    .slide {
+      display: none;
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      color: var(--text-color);
+    }
+
+    .slide h3 {
+      color: var(--highlight-color);
+      font-size: 1.8rem;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: var(--text-color);
+      font-weight: bold;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(30, 144, 255, 0.8); /* DodgerBlue */
+    }
+
+    .dot-container {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: var(--highlight-color);
+    }
+
+    footer {
+      background-color: rgba(26, 43, 78, 0.95);
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    footer h2 {
+      margin-bottom: 1rem;
+      color: var(--highlight-color);
+    }
+
+    footer p {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    footer .partner-logos img {
+      height: 50px;
+      margin: 0 15px;
+      transition: transform 0.3s ease;
+    }
+
+    footer .partner-logos img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .nav-links a {
+        margin-left: 10px;
+        font-size: 1rem;
+      }
+
+      .feature-item, .product-item, .testimonial-item {
+        padding: 1.5rem;
+      }
+
+      .feature-item h3, .product-item h3, .testimonial-item h3 {
+        font-size: 1.3rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Additional Styles for Forms */
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+      font-size: var(--font-medium);
+    }
+
+    form button {
+      padding: 0.75rem 2rem;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: var(--button-hover-color);
+    }
+
+    /* Additional Sections Styling */
+    #sustainability {
+      background-color: #2A3B5C;
+    }
+
+    #news {
+      background-color: #1A2B4E;
+    }
+
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <a href="#" class="logo">ClimatBloc™</a>
-            <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#materials">Materials</a></li>
-                <li><a href="#energy">Energy Storage</a></li>
-                <li><a href="#carbon-foam">Carbon Black Foam</a></li>
-                <li><a href="#performance">Performance</a></li>
-                <li><a href="#fire-safety">Fire Safety</a></li>
-                <li><a href="#patents">Patents</a></li>
-                <li><a href="#proof">Proof of Concept</a></li>
-                <li><a href="#applications">Applications</a></li>
-                <li><a href="#market">Market Trends</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <nav class="container" aria-label="Main Navigation">
+      <div class="logo">
+        <img src="climatbloc-logo.png" alt="ClimatBloc Logo">
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#solutions">Innovative Solutions</a>
+        <a href="#products">Products</a>
+        <a href="#partners">Partners</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#sustainability">Sustainability</a>
+        <a href="#news">News & Insights</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>ClimatBloc™</h1>
-        <p>Revolutionizing Sustainable Construction</p>
-    </section>
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h1>Revolutionizing Sustainable Construction</h1>
+      <p>Patented technology for a greener, more resilient future</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
 
-    <!-- Overview Section -->
-    <section id="overview">
-        <h2>ClimatBloc™ Overview</h2>
-        <p>ClimatBloc™ represents a paradigm shift in construction technology, offering a patented building system that seamlessly integrates structural efficiency, sustainability, and energy innovation. Our interlocking self-tensioning design not only enhances the structural integrity of buildings but also serves as a platform for advanced material science and energy management solutions.</p>
-        <ul>
-            <li>Patented interlocking self-tensioning design</li>
-            <li>Integration of eco-friendly materials and energy storage systems</li>
-            <li>Alignment with global environmental goals and sustainability initiatives</li>
-            <li>Potential to revolutionize both residential and commercial construction sectors</li>
-        </ul>
-    </section>
-
-    <!-- Materials Section -->
-    <section id="materials">
-        <h2>Sustainable Materials and Substrate Options</h2>
-        <p>ClimatBloc™'s material science pushes the boundaries of sustainable construction, offering a diverse range of eco-friendly substrate options that cater to various building requirements and environmental conditions.</p>
-        <div class="material-options">
-            <h3>Hemp-Lime Lightweight Concrete</h3>
-            <ul>
-                <li>CO₂ sequestration properties</li>
-                <li>Excellent thermal and acoustic insulation</li>
-                <li>Moisture-regulating capabilities</li>
-            </ul>
-            <h3>Hemp Hurd/Shiv</h3>
-            <ul>
-                <li>Renewable resource with rapid growth cycle</li>
-                <li>Low embodied energy in production</li>
-                <li>Natural pest resistance</li>
-            </ul>
-            <h3>Proprietary Lime Mix</h3>
-            <ul>
-                <li>Enhanced durability and longevity</li>
-                <li>Reduced carbon footprint compared to traditional cement</li>
-                <li>Self-healing properties for micro-cracks</li>
-            </ul>
+  <!-- About Us Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About ClimatBloc</h2>
+      <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide">
+          <h3>Patented Self-Tensioning Frame</h3>
+          <ul>
+            <li>Revolutionary efficiency and simplified assembly.</li>
+            <li>Reduces labor requirements and construction time.</li>
+            <li>Interlocking design enhances structural integrity.</li>
+          </ul>
         </div>
-        <p><strong>Additional Benefits:</strong></p>
-        <ul>
-            <li>Fire resistance ratings exceeding traditional materials</li>
-            <li>High wind resistance, suitable for extreme weather conditions</li>
-            <li>Potential for localized material sourcing, reducing transportation emissions</li>
-        </ul>
-    </section>
-
-    <!-- Energy Storage Section -->
-    <section id="energy">
-        <h2>Energy Storage Integration</h2>
-        <p>ClimatBloc™'s innovative approach to energy management transforms building materials from passive elements into active energy systems, creating a new class of "smart" construction materials.</p>
-        <ul>
-            <li>Embedded energy storage capabilities within structural components</li>
-            <li>Compatibility with multiple renewable energy sources (solar, wind, tidal)</li>
-            <li>Dynamic load balancing and energy distribution systems</li>
-            <li>Potential for micro-grid creation and community energy sharing</li>
-        </ul>
-        <p><strong>Implications:</strong></p>
-        <ul>
-            <li>Reduction in peak energy demand on traditional power grids</li>
-            <li>Increased resilience against power outages and natural disasters</li>
-            <li>Enablement of off-grid construction in remote or developing areas</li>
-        </ul>
-    </section>
-
-    <!-- Carbon Black Foam Section -->
-    <section id="carbon-foam">
-        <h2>Carbon Black Foam Technology</h2>
-        <p>The incorporation of carbon black foam represents a significant leap in material science applied to construction, offering multifaceted benefits that extend beyond simple insulation.</p>
-        <ul>
-            <li>Cost-effective energy storage solution</li>
-            <li>Enhanced thermal and acoustic insulation properties</li>
-            <li>Potential for electromagnetic shielding in sensitive environments</li>
-            <li>Scalable production using recycled carbon materials</li>
-        </ul>
-        <p><strong>Future Development:</strong></p>
-        <ul>
-            <li>Ongoing research into nanotechnology applications for improved performance</li>
-            <li>Exploration of graphene-enhanced variants for superior conductivity</li>
-            <li>Potential for integration with smart home systems for optimized energy usage</li>
-        </ul>
-    </section>
-
-    <!-- Performance Metrics Section -->
-    <section id="performance">
-        <h2>Structural Efficiency and Performance Metrics</h2>
-        <p>ClimatBloc™'s self-tensioning design revolutionizes the construction process, offering significant advantages in terms of efficiency, strength, and overall building performance.</p>
-        <ul>
-            <li>Up to 30% reduction in construction time compared to traditional methods</li>
-            <li>Increased load-bearing capacity with reduced material usage</li>
-            <li>Enhanced seismic resistance due to interlocking design</li>
-            <li>Improved air-tightness leading to better energy efficiency</li>
-        </ul>
-        <p><strong>Long-term Benefits:</strong></p>
-        <ul>
-            <li>Reduced maintenance costs over building lifetime</li>
-            <li>Adaptability for future retrofits or expansions</li>
-            <li>Potential for easy deconstruction and material reuse at end-of-life</li>
-        </ul>
-    </section>
-
-    <!-- Fire Safety Section -->
-    <section id="fire-safety">
-        <h2>Fire Resistance and Safety Advantages</h2>
-        <p>ClimatBloc™'s material composition offers superior fire safety characteristics, potentially redefining building safety standards in high-risk areas.</p>
-        <ul>
-            <li>Non-combustible nature of hemp-lime composite</li>
-            <li>Ability to withstand temperatures exceeding 1000°C without structural failure</li>
-            <li>Smoke suppression properties, reducing toxic emissions during fires</li>
-        </ul>
-        <p><strong>Additional Safety Features:</strong></p>
-        <ul>
-            <li>Natural resistance to mold and pests, improving indoor air quality</li>
-            <li>Non-toxic materials safe for occupants and environment</li>
-            <li>Potential for integration with smart fire detection and suppression systems</li>
-        </ul>
-    </section>
-
-    <!-- Patents Section -->
-    <section id="patents">
-        <h2>Patents and Innovation Protection</h2>
-        <p>ClimatBloc™'s robust intellectual property portfolio safeguards its innovations and positions the company as a leader in sustainable construction technology.</p>
-        <ul>
-            <li>International patents covering self-tensioning frame design</li>
-            <li>Material composition patents for hemp-lime composite and carbon-black infused concrete</li>
-            <li>Energy storage integration methods and systems</li>
-        </ul>
-        <p><strong>Strategic Partnerships:</strong></p>
-        <ul>
-            <li>Collaboration with research institutions for ongoing R&D</li>
-            <li>Industry partnerships for scaling and implementation</li>
-        </ul>
-        <p><strong>Future Innovation Pipeline:</strong></p>
-        <ul>
-            <li>Continuous improvement in material efficiency and performance</li>
-            <li>Exploration of AI and IoT integration for smart building management</li>
-            <li>Development of customized solutions for specific climate zones or building types</li>
-        </ul>
-    </section>
-
-    <!-- Proof of Concept Section -->
-    <section id="proof">
-        <h2>Proof of Concept</h2>
-        <p>ClimatBloc™'s real-world implementations serve as living laboratories, providing valuable data and validating the technology's effectiveness across various metrics.</p>
-        <h3>Case Study: Vancouver Island Residences</h3>
-        <ul>
-            <li>Four residential structures built and occupied</li>
-            <li>Continuous monitoring of one structure as part of doctoral research</li>
-            <li>Key performance indicators:
-                <ul>
-                    <li>Energy efficiency</li>
-                    <li>Indoor air quality measurements</li>
-                    <li>Structural integrity assessments over time</li>
-                    <li>Occupant satisfaction and wellbeing metrics</li>
-                </ul>
-            </li>
-        </ul>
-        <p><strong>Data Collection and Analysis:</strong></p>
-        <ul>
-            <li>Use of IoT sensors for real-time performance monitoring</li>
-            <li>Big data analytics for predictive maintenance and optimization</li>
-            <li>Potential for machine learning integration to improve building performance over time</li>
-        </ul>
-    </section>
-
-    <!-- Applications Section -->
-    <section id="applications">
-        <h2>Diverse Applications of ClimatBloc™</h2>
-        <p>ClimatBloc™'s versatility opens up a wide range of applications across various sectors of the construction industry.</p>
-        <h3>Sector-Specific Applications:</h3>
-        <div class="applications-grid">
-            <div class="application">
-                <h4>Residential</h4>
-                <ul>
-                    <li>Single-family homes with integrated energy management</li>
-                    <li>Multi-unit dwellings with shared energy resources</li>
-                    <li>Affordable housing projects with reduced operational costs</li>
-                </ul>
-            </div>
-            <div class="application">
-                <h4>Commercial</h4>
-                <ul>
-                    <li>Office buildings with enhanced employee comfort and productivity</li>
-                    <li>Retail spaces with improved energy efficiency and customer experience</li>
-                    <li>Warehouses and industrial facilities with integrated energy production</li>
-                </ul>
-            </div>
-            <div class="application">
-                <h4>Infrastructure</h4>
-                <ul>
-                    <li>Disaster-resistant community centers</li>
-                    <li>Smart city initiatives integrating building and grid management</li>
-                    <li>Educational institutions showcasing sustainable technologies</li>
-                </ul>
-            </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <h3>Exceptional Performance Metrics</h3>
+          <ul>
+            <li>R-Factor of 40 for superior insulation.</li>
+            <li>3-hour fire resistance ensures enhanced safety.</li>
+            <li>Withstands winds up to 170 mph for extreme resilience.</li>
+          </ul>
         </div>
-        <p><strong>Customization Potential:</strong></p>
-        <ul>
-            <li>Adaptability to local architectural styles and building codes</li>
-            <li>Scalability from small structures to large-scale developments</li>
-            <li>Potential for prefabrication and modular construction methods</li>
-        </ul>
-    </section>
+        <!-- Slide 3 -->
+        <div class="slide">
+          <h3>Sustainable Materials</h3>
+          <ul>
+            <li>Utilizes hemp lime composite to sequester CO₂.</li>
+            <li>Carbon-black infused concrete reduces environmental impact.</li>
+            <li>Eco-friendly materials enhance sustainability and durability.</li>
+          </ul>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+          <h3>Advanced Collaborations</h3>
+          <ul>
+            <li>Partnered with MIT for carbon-black infused concrete.</li>
+            <li>Utilizes ExxonMobil's Proxxima thermoset for efficient manufacturing.</li>
+            <li>Integrated with Ohio Sunshine solar panels for energy solutions.</li>
+          </ul>
+        </div>
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" aria-label="Next Slide">&#10095;</a>
+      </div>
+      <!-- Dots/bullets -->
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)" aria-label="Slide 1"></span>
+        <span class="dot" onclick="currentSlide(2)" aria-label="Slide 2"></span>
+        <span class="dot" onclick="currentSlide(3)" aria-label="Slide 3"></span>
+        <span class="dot" onclick="currentSlide(4)" aria-label="Slide 4"></span>
+      </div>
+      <p>ClimatBloc is at the forefront of sustainable construction technology. Our patented self-tensioning interlocking frame system, combined with innovative eco-friendly materials, sets new standards in the industry. We are committed to reducing the environmental impact of construction while enhancing building performance and durability.</p>
+      <p>Our advanced materials, including hemp lime composite and carbon-black infused lightweight concrete, provide superior insulation, fire resistance, and wind defiance, all while significantly reducing CO₂ emissions. Partnering with industry leaders like MIT, ExxonMobil, and Ohio Sunshine, we leverage cutting-edge research and sustainable practices to deliver unparalleled construction solutions.</p>
+    </div>
+  </section>
 
-    <!-- Market Trends Section -->
-    <section id="market">
-        <h2>Market Trends and Opportunities</h2>
-        <p>ClimatBloc™ is strategically positioned to capitalize on growing market demands for sustainable and energy-efficient building solutions.</p>
-        <h3>Market Drivers:</h3>
-        <ul>
-            <li>Increasing regulatory pressure for carbon reduction in construction</li>
-            <li>Rising energy costs driving demand for efficient building technologies</li>
-            <li>Growing consumer awareness and preference for sustainable living options</li>
-        </ul>
-        <h3>Market Size and Growth Projections:</h3>
-        <ul>
-            <li>Global green building materials market size and CAGR</li>
-            <li>Regional adoption trends and growth hotspots</li>
-            <li>Potential market share capture over 5-10 year horizon</li>
-        </ul>
-        <h3>Competitive Landscape:</h3>
-        <ul>
-            <li>Analysis of current market leaders and their offerings</li>
-            <li>ClimatBloc™'s unique value proposition and differentiators</li>
-            <li>Potential for strategic partnerships or acquisitions</li>
-        </ul>
-    </section>
+  <!-- Innovative Solutions Section -->
+  <section id="solutions">
+    <div class="container">
+      <h2>Innovative Solutions</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>Patented Self-Tensioning Frame</h3>
+          <p>Our revolutionary self-tensioning interlocking frame simplifies assembly, reducing the need for skilled labor and accelerating construction timelines.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Unmatched Performance</h3>
+          <p>Featuring an R-Factor of 40 for superior insulation, a 3-hour fire rating, and the ability to withstand winds up to 170 mph, ClimatBloc ensures top-tier building protection.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Eco-Friendly Materials</h3>
+          <p>Utilizing hemp lime composite and carbon-black infused concrete, our materials significantly reduce CO₂ emissions while enhancing structural integrity.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Carbon-Black Infused Concrete</h3>
+          <p>Developed in collaboration with MIT, this lightweight concrete not only matches our hemp lime composite in performance but also acts as a capacitor when aligned with Ohio Sunshine solar panels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Ready to revolutionize your construction projects with ClimatBloc™?</p>
-        <p>Email: <a href="mailto:info@climatbloc.co">info@climatbloc.co</a></p>
-        <p>Phone: +1 (123) 456-7890</p>
-    </section>
+  <!-- Products Section -->
+  <section id="products">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <div class="product-item">
+          <h3>Hemp Lime Composite System</h3>
+          <p>Our flagship product combines hemp lime composite with our patented self-tensioning frame for optimal insulation, sustainability, and ease of construction.</p>
+        </div>
+        <div class="product-item">
+          <h3>Carbon-Black Infused Concrete System</h3>
+          <p>In collaboration with MIT, this system offers enhanced structural integrity and serves as an energy storage solution when integrated with Ohio Sunshine solar panels.</p>
+        </div>
+        <div class="product-item">
+          <h3>ClimatBloc Design Services</h3>
+          <p>We offer custom design and consultation services to seamlessly integrate our innovative systems into your construction projects, ensuring efficiency and sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 ClimatBloc™. All rights reserved.</p>
-    </footer>
+  <!-- Strategic Collaborations Section -->
+  <section id="partners">
+    <div class="container">
+      <h2>Strategic Collaborations</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>MIT</h3>
+          <p>Partnered with MIT for the development of carbon-black infused concrete, enhancing structural integrity and energy solutions.</p>
+        </div>
+        <div class="feature-item">
+          <h3>ExxonMobil's Proxxima</h3>
+          <p>Leveraging Proxxima's advanced thermoset materials for efficient and scalable frame manufacturing.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Ohio Sunshine</h3>
+          <p>Integrating Ohio Sunshine's solar panel technology with our carbon-black infused concrete for innovative energy storage solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-        // JavaScript for responsive navigation menu (optional)
-        const nav = document.querySelector('nav');
-        const menuToggle = document.createElement('div');
-        menuToggle.className = 'menu-toggle';
-        menuToggle.innerHTML = '&#9776;';
-        nav.insertBefore(menuToggle, nav.firstChild);
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-item">
+          <p>"ClimatBloc transformed our construction process with their innovative frames. The efficiency and sustainability are unparalleled." - Jane Doe, GreenBuild Inc.</p>
+        </div>
+        <div class="testimonial-item">
+          <p>"Partnering with ClimatBloc has significantly reduced our CO₂ footprint while maintaining superior building performance." - John Smith, EcoConstruct.</p>
+        </div>
+        <div class="testimonial-item">
+          <p>"The carbon-black infused concrete is a game-changer. It not only strengthens our structures but also integrates seamlessly with our renewable energy systems." - Emily Johnson, SolarTech Solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        menuToggle.addEventListener('click', () => {
-            const navList = nav.querySelector('ul');
-            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-        });
-    </script>
+  <!-- Sustainability Section -->
+  <section id="sustainability">
+    <div class="container">
+      <h2>Sustainability</h2>
+      <p>At ClimatBloc, sustainability is at the core of everything we do. Our commitment to reducing environmental impact is reflected in our choice of materials, innovative manufacturing processes, and strategic partnerships.</p>
+      <ul>
+        <li><strong>Material Sourcing:</strong> We use renewable materials like hemp and lime, ensuring our products are both sustainable and eco-friendly.</li>
+        <li><strong>Energy Efficiency:</strong> Our high R-Factor insulation reduces energy consumption, contributing to lower utility costs and a reduced carbon footprint.</li>
+        <li><strong>Waste Reduction:</strong> Our streamlined manufacturing processes minimize waste, promoting a circular economy.</li>
+        <li><strong>CO₂ Sequestration:</strong> The hemp lime composite actively sequesters carbon dioxide, aiding in climate change mitigation.</li>
+      </ul>
+      <p>By integrating cutting-edge technologies and sustainable practices, ClimatBloc is paving the way for a greener, more resilient future in construction.</p>
+    </div>
+  </section>
+
+  <!-- News & Insights Section -->
+  <section id="news">
+    <div class="container">
+      <h2>News & Insights</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>MIT Engineers Create Carbon-Black Infused Supercapacitor</h3>
+          <p>In collaboration with MIT, ClimatBloc has developed a groundbreaking carbon-black infused concrete that acts as a supercapacitor, enhancing energy storage capabilities in buildings. <a href="https://news.mit.edu/2023/mit-engineers-create-supercapacitor-ancient-materials-0731" target="_blank" rel="noopener noreferrer">Read More</a></p>
+        </div>
+        <div class="feature-item">
+          <h3>ExxonMobil's Proxxima Enhances ClimatBloc Manufacturing</h3>
+          <p>Leveraging Proxxima's advanced thermoset materials, ClimatBloc has significantly increased manufacturing speed and output while reducing waste and cleanup costs. <a href="https://www.exxonmobil.com/" target="_blank" rel="noopener noreferrer">Learn More</a></p>
+        </div>
+        <div class="feature-item">
+          <h3>Ohio Sunshine Solar Integration</h3>
+          <p>ClimatBloc integrates Ohio Sunshine's solar panel technology with carbon-black infused concrete, creating energy-efficient buildings that harness renewable energy. <a href="https://ohiosunshine.com/" target="_blank" rel="noopener noreferrer">Discover More</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Ready to revolutionize your construction project? Get in touch with our team of experts.</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="partner-logos" style="margin-top: 2rem;">
+        <a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">
+          <img src="mit-logo.png" alt="MIT Logo">
+        </a>
+        <a href="https://www.exxonmobil.com/" target="_blank" rel="noopener noreferrer">
+          <img src="exxonmobil-logo.png" alt="ExxonMobil Logo">
+        </a>
+        <a href="https://ohiosunshine.com/" target="_blank" rel="noopener noreferrer">
+          <img src="ohio-sunshine-logo.png" alt="Ohio Sunshine Logo">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 ClimatBloc. All rights reserved.</p>
+      <p><a href="#home" style="color: var(--accent-color); text-decoration: none;">Back to Top</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Slideshow -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail/dot controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName('slide');
+      const dots = document.getElementsByClassName('dot');
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(' active', '');
+      }
+      slides[slideIndex-1].style.display = 'block';
+      dots[slideIndex-1].className += ' active';
+    }
+
+    // Automatic slideshow
+    setInterval(function() {
+      plusSlides(1);
+    }, 7000); // Change slide every 7 seconds
+  </script>
 </body>
 </html>
